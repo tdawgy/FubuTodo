@@ -1,4 +1,5 @@
 ﻿using FubuMVC.Core.Registration;
+using StructureMap.Graph;
 
 namespace FubuTodo
 {
