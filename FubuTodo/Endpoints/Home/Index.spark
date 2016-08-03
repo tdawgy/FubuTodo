@@ -1,0 +1,3 @@
+﻿<viewdata model="Fubu3.Home.HomeViewModel" />
+ 
+<h1>!{ Model.Text }</h1>
