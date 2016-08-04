@@ -1,3 +1,4 @@
 ﻿<viewdata model="FubuTodo.Endpoints.Home.HomeViewModel" />
  
 <h1>!{ Model.Text }</h1>
+<a href="/todo/list">List of Todos</a>
