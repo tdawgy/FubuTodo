@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using FubuMVC.Core;
+﻿using FubuMVC.Core;
 using FubuTodo.Service;
+using FubuTodo.Web.Endpoints.Todo.ViewModels;
 
 namespace FubuTodo.Web.Endpoints.Todo
 {
@@ -15,26 +14,27 @@ namespace FubuTodo.Web.Endpoints.Todo
     private readonly ToDoService _toDoService;
 
     [UrlPattern("Todo/List")] //overides the default translation of the action to a url (in this case, the get_index() with a default url pattern of "/index" will now have a blank url pattern, effectively turning it into the home page)
-    public ListViewModel get_list()
+    public List get_list()
     {
-      var model = new ListViewModel(_toDoService.GetAllTasks());
+      var model = new List(_toDoService.GetAllTasks());
 
       return model;
     }
-  }
 
-  public class ListViewModel
-  {
-    public ListViewModel()
+    [UrlPattern("Todo/Create")] //overides the default translation of the action to a url (in this case, the get_index() with a default url pattern of "/index" will now have a blank url pattern, effectively turning it into the home page)
+    public void post_todo(Create model)
     {
-      Todos = new List<Domain.Todo>();
+      _toDoService.Create(model.Todo);
     }
 
-    public ListViewModel(IEnumerable<Domain.Todo> todos)
+    public void put_todo(Update model)
     {
-      Todos = todos.ToList();
+      _toDoService.Update(model.Todo);
     }
 
-    public List<Domain.Todo> Todos { get; set; }
+    public void delete_todo(Delete model)
+    {
+      _toDoService.Delete(model.Todo);
+    }
   }
 }

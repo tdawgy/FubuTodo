@@ -1,0 +1,9 @@
+﻿<viewdata model="FubuTodo.Web.Endpoints.Todo.ViewModels.List" />
+
+<render partial="Views/Create" />
+
+<ul if="Model.Todos.Any()">
+  <li each="var todo in Model.Todos">
+    ${todo.Name}
+  </li>
+</ul>

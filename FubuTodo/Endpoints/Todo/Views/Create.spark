@@ -1,0 +1,6 @@
+﻿<form action="create" method="post">
+  <label for="Name">Todo Name</label>
+  <input name="Name" type="text" />
+
+  <input name="Submit" type="submit" />
+</form>

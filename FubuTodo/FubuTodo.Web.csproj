@@ -62,7 +62,8 @@
   <ItemGroup>
     <Content Include="Endpoints\Home\Index.spark" />
     <Content Include="Shared\Application.spark" />
-    <Content Include="Endpoints\Todo\List.spark" />
+    <Content Include="Endpoints\Todo\Views\List.spark" />
+    <Content Include="Endpoints\Todo\Views\Create.spark" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -76,6 +77,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CoreRegistry.cs" />
+    <Compile Include="Endpoints\Todo\ViewModels\Delete.cs" />
+    <Compile Include="Endpoints\Todo\ViewModels\List.cs" />
+    <Compile Include="Endpoints\Todo\ViewModels\Update.cs" />
+    <Compile Include="Endpoints\Todo\ViewModels\Create.cs" />
     <Compile Include="Endpoints\Todo\TodoEndpoint.cs" />
     <Compile Include="FubuTodoRegistery.cs" />
     <Compile Include="global.asax.cs">
