@@ -121,6 +121,10 @@
       <Project>{fcd10369-3763-4440-a03a-5b622b5a6aa7}</Project>
       <Name>FubuTodo.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FubuTodo.Service\FubuTodo.Service.csproj">
+      <Project>{ac4a5733-b298-4e15-80e2-8ba1060466d3}</Project>
+      <Name>FubuTodo.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FubuCore">

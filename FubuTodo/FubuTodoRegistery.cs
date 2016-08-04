@@ -13,7 +13,6 @@ namespace FubuTodo.Web
       //Setup for the IOC (Inverson of Control) container using StructureMap (Fubu3 only supports StructureMap)
       Services.IncludeRegistry<CoreRegistry>();
 
-
       //Enables the Fubu3 Diagnostics - Very useful for troubleshooting your application (access via "localhost:port#/_fubu")
       Features.Diagnostics.Enable(TraceLevel.Verbose);
     }

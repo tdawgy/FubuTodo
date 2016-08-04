@@ -19,6 +19,7 @@ namespace FubuTodo.Service
       using (var session = _documentStore.OpenSession())
       {
         session.Store(todo);
+        session.SaveChanges();
       }
     }
 
@@ -27,6 +28,7 @@ namespace FubuTodo.Service
       using (var session = _documentStore.OpenSession())
       {
         session.Delete(todo);
+        session.SaveChanges();
       }
     }
 
@@ -36,6 +38,7 @@ namespace FubuTodo.Service
       {
         //TODO might need to change this to first load the entity to bring it into the session for change tracking
         session.Store(todo);
+        session.SaveChanges();
       }
     }
 

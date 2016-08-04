@@ -4,5 +4,4 @@
   <li each="var todo in Model.Todos">
     ${todo.Name}
   </li>
-  
 </ul>

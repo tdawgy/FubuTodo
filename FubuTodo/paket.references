@@ -4,7 +4,3 @@ HtmlTags
 structuremap
 FubuMVC.Spark
 spark
-FubuMVC.RavenDb
-RavenDB.Client
-RavenDB.Database
-RavenDB.Embedded
