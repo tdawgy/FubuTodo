@@ -4,6 +4,6 @@
 
 <ul if="Model.Todos.Any()">
   <li each="var todo in Model.Todos">
-    ${todo.Name}
+    ${todo.Id} - ${todo.Name} - ${todo.IsComplete}
   </li>
 </ul>
