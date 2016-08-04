@@ -22,9 +22,9 @@ namespace FubuTodo.Web.Endpoints.Todo
     }
 
     [UrlPattern("Todo/Create")] //overides the default translation of the action to a url (in this case, the get_index() with a default url pattern of "/index" will now have a blank url pattern, effectively turning it into the home page)
-    public void post_todo(Create model)
+    public void post_todo(Domain.Todo todo)
     {
-      _toDoService.Create(model.Todo);
+      _toDoService.Create(todo);
     }
 
     public void put_todo(Update model)
