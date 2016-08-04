@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
 using FubuMVC.Core;
-using FubuMVC.Core.Navigation;
-using FubuTodo.Endpoints.Home;
 
-namespace FubuTodo.Endpoints.Todo
+namespace FubuTodo.Web.Endpoints.Todo
 {
   public class TodoEndpoint
   {

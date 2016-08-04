@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="FubuTodo.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="FubuTodo.Web.Global" Language="C#" %>

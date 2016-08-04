@@ -4,7 +4,7 @@ using Raven.Client.Document;
 using StructureMap;
 using StructureMap.Graph;
 
-namespace FubuTodo
+namespace FubuTodo.Web
 {
   public class CoreRegistry : ServiceRegistry
   {

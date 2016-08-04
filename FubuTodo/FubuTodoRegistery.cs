@@ -1,6 +1,6 @@
 ﻿using FubuMVC.Core;
 
-namespace FubuTodo
+namespace FubuTodo.Web
 {
   public class AppFubuRegistry : FubuRegistry
   {

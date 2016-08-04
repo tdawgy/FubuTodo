@@ -2,7 +2,7 @@
 using System.Web;
 using FubuMVC.Core;
 
-namespace FubuTodo
+namespace FubuTodo.Web
 {
   public class Global : HttpApplication
   {

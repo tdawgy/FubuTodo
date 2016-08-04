@@ -1,4 +1,4 @@
-﻿<viewdata model="FubuTodo.Endpoints.Todo.ListViewModel" />
+﻿<viewdata model="FubuTodo.Web.Endpoints.Todo.ListViewModel" />
 
 <ul if="Model.Todos.Any()">
   <li each="var todo in Model.Todos">

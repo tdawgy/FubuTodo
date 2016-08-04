@@ -1,6 +1,6 @@
 ﻿using FubuMVC.Core;
 
-namespace FubuTodo.Endpoints.Home
+namespace FubuTodo.Web.Endpoints.Home
 {
   public class HomeEndpoint
   {
