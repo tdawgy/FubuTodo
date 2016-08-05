@@ -1,4 +1,5 @@
 ﻿using FubuMVC.Core;
+using FubuMVC.Core.Continuations;
 using FubuTodo.Service;
 using FubuTodo.Web.Endpoints.Todo.ViewModels;
 
@@ -13,7 +14,7 @@ namespace FubuTodo.Web.Endpoints.Todo
 
     private readonly ToDoService _toDoService;
 
-    [UrlPattern("Todo/List")] //overides the default translation of the action to a url (in this case, the get_index() with a default url pattern of "/index" will now have a blank url pattern, effectively turning it into the home page)
+    [Get("Todo/List")]
     public List get_list()
     {
       var model = new List(_toDoService.GetAllTasks());
@@ -21,11 +22,13 @@ namespace FubuTodo.Web.Endpoints.Todo
       return model;
     }
 
-    [UrlPattern("Todo/Create")] //overides the default translation of the action to a url (in this case, the get_index() with a default url pattern of "/index" will now have a blank url pattern, effectively turning it into the home page)
-    public void post_todo(Create todo)
+    [Post("Todo/Create")]
+    public FubuContinuation post_todo(Create todo)
     {
       var todoToCreate = new Domain.Todo(todo.Name);
       _toDoService.Create(todoToCreate);
+
+      return FubuContinuation.RedirectTo<TodoEndpoint>(endpoint => endpoint.get_list());
     }
 
     public void put_todo(Update model)

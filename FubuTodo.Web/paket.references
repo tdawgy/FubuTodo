@@ -1,6 +1,8 @@
 FubuMVC.Core
 FubuCore
 HtmlTags
+RavenDB.Client
+RavenDB.Embedded
 structuremap
 FubuMVC.Spark
 spark
