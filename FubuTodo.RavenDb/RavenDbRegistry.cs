@@ -1,6 +1,9 @@
-﻿using FubuMVC.Core.Registration;
+﻿using System;
+using FubuMVC.Core.Registration;
 using Raven.Client;
 using Raven.Client.Document;
+using Raven.Client.Embedded;
+using Raven.Database.Server;
 
 namespace FubuTodo.RavenDb
 {
@@ -8,17 +11,19 @@ namespace FubuTodo.RavenDb
   {
     public RavenDbRegistry()
     {
-      var documentStore = InitializeDocumentStore();
-      AddService(documentStore);
+      AddService(DocumentStore);
     }
 
-    private IDocumentStore InitializeDocumentStore()
+    public static IDocumentStore DocumentStore { get; } = InitializeDocumentStore();
+
+    private static IDocumentStore InitializeDocumentStore()
     {
-      var documentStore = new DocumentStore
+      var documentStore = new EmbeddableDocumentStore
       {
-        Url = "http://localhost:8080",
-        DefaultDatabase = "Todos"
+        UseEmbeddedHttpServer = true,
+        DataDirectory = "database"
       };
+
       documentStore.Initialize();
 
       return documentStore;

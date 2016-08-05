@@ -253,5 +253,5 @@ paket-files/
 *.sln.iml
 
 # RavenDb data
-data/
+database
 Raven/
