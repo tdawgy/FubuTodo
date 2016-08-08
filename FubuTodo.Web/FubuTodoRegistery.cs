@@ -1,4 +1,8 @@
-﻿using FubuMVC.Core;
+﻿using System.Diagnostics;
+using FubuMVC.Core;
+using StructureMap;
+using StructureMap.Graph;
+using TraceLevel = FubuMVC.Core.TraceLevel;
 
 namespace FubuTodo.Web
 {
@@ -12,6 +16,18 @@ namespace FubuTodo.Web
 
       //Enables the Fubu3 Diagnostics - Very useful for troubleshooting your application (access via "localhost:port#/_fubu")
       Features.Diagnostics.Enable(TraceLevel.Verbose);
+
+      var container = new Container(scanner =>
+      {
+        scanner.Scan(item =>
+        {
+          item.AssembliesFromApplicationBaseDirectory(assembly =>
+          {
+            Debug.WriteLine(assembly.FullName.ToString() + " | " + assembly.CodeBase.ToString());
+            return !assembly.FullName.Contains("Raven");
+          });
+        });
+      });
     }
   }
 }

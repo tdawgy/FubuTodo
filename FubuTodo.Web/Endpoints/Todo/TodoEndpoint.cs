@@ -7,12 +7,12 @@ namespace FubuTodo.Web.Endpoints.Todo
 {
   public class TodoEndpoint
   {
-    public TodoEndpoint(ToDoService toDoService)
+    public TodoEndpoint(TodoService toDoService)
     {
       _toDoService = toDoService;
     }
 
-    private readonly ToDoService _toDoService;
+    private readonly TodoService _toDoService;
 
     [Get("Todo/List")]
     public List get_list()

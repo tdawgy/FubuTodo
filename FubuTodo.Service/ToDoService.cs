@@ -5,11 +5,11 @@ using Raven.Client;
 
 namespace FubuTodo.Service
 {
-  public class ToDoService
+  public class TodoService: ITodoService
   {
     private readonly IDocumentStore _documentStore;
 
-    public ToDoService(IDocumentStore documentStore)
+    public TodoService(IDocumentStore documentStore)
     {
       _documentStore = documentStore;
     }

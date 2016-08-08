@@ -254,4 +254,5 @@ paket-files/
 
 # RavenDb data
 database
+data
 Raven/
