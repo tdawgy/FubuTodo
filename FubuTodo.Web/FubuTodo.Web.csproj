@@ -51,6 +51,9 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -62,8 +65,15 @@
   <ItemGroup>
     <Content Include="Endpoints\Home\Index.spark" />
     <Content Include="Shared\Application.spark" />
-    <Content Include="Endpoints\Todo\Views\List.spark" />
-    <Content Include="Endpoints\Todo\Views\Create.spark" />
+    <Content Include="Endpoints\Todo\Views\List.spark">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Endpoints\Todo\Views\Create.spark">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Endpoints\Todo\Views\Update.spark">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -73,7 +83,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Endpoints\Todo\ViewModels\Delete.cs" />

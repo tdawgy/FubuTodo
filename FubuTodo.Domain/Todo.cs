@@ -4,9 +4,10 @@
   {
     public Todo() { }
 
-    public Todo(string name)
+    public Todo(string name, bool isComplete)
     {
       Name = name;
+      IsComplete = isComplete;
     }
 
     public string Id { get; set; }

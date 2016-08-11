@@ -1,9 +1,9 @@
 ﻿<viewdata model="FubuTodo.Web.Endpoints.Todo.ViewModels.List" />
 
-<render partial="Views/Create" />
+<a href="/create">Create</a>
 
 <ul if="Model.Todos.Any()">
   <li each="var todo in Model.Todos">
-    ${todo.Id} - ${todo.Name} - ${todo.IsComplete}
+    <a href="/update?Id=${todo.Id}">${todo.Id} - ${todo.Name} - ${todo.IsComplete}</a>
   </li>
 </ul>

@@ -1,13 +1,13 @@
-﻿<viewdata model="FubuTodo.Web.Endpoints.Todo.ViewModels.Update"/>
+﻿<viewdata model="FubuTodo.Web.Endpoints.Todo.ViewModels.Update" />
 
-<form action="update" method="put">
-  <span>${todo.Id}</span>
-
+<form action="update" method="post">
   <label for="Name">Todo Name</label>
-  <input name="Name" type="text" />
-  
-  <label for="Name">Is Complete</label>
-  <input name="IsComplete" type="checkbox" />
+  <input name="Name" type="text" value="${Model.Name}" />
+    
+  <label for="IsComplete">Is Complete</label>
+  <input name="IsComplete" type="checkbox" value="${Model.IsComplete}" />
 
-  <input name="Submit" type="submit" />
+  <input hidden="hidden" name="Id" value="${Model.Id}" />
+
+  <input name="Submit" type="Submit" />
 </form>

@@ -1,6 +1,14 @@
-﻿<form action="create" method="post">
-  <label for="Name">Todo Name</label>
-  <input name="Name" type="text" />
+﻿<viewdata model="FubuTodo.Web.Endpoints.Todo.ViewModels.Create" />
 
-  <input name="Submit" type="submit" />
+<form action="create" method="post">
+  <div>
+    <label for="Name">Todo Name</label>
+    <input name="Name" type="text" />
+  </div>
+  <div>
+    <label for="IsComplete">Is Complete</label>
+    <input name="IsComplete" type="checkbox" />
+  </div>
+  
+  <input name="Submit" type="Submit" />
 </form>

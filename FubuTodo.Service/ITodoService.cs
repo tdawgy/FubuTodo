@@ -8,6 +8,7 @@ namespace FubuTodo.Service
     void Create(Todo todo);
     void Delete(Todo todo);
     void Update(Todo todo);
-    IEnumerable<Todo> GetAllTasks();
+    Todo GetTodo(string id);
+    IEnumerable<Todo> GetAllTodos();
   }
 }

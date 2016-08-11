@@ -42,12 +42,23 @@ namespace FubuTodo.Service
       }
     }
 
-    public IEnumerable<Todo> GetAllTasks()
+    public Todo GetTodo(string id)
     {
       using (var session = _documentStore.OpenSession())
       {
-        var tasks = session.Query<Todo>().ToList();
-        return tasks;
+        var todo = session.Load<Todo>(id);
+
+        return todo;
+      }
+    }
+
+    public IEnumerable<Todo> GetAllTodos()
+    {
+      using (var session = _documentStore.OpenSession())
+      {
+        var todos = session.Query<Todo>().ToList();
+
+        return todos;
       }
     }
   }
